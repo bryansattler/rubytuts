@@ -7,13 +7,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrap" class="container">
+    <div id="header" class="sixteen-columns">
+      <div class="inner">
+        <h1 id="site-title" class="text">
+          <%= link_to "RubyTuts", welcome_index_path %>
+        </h1>
+        <span class="site-desc text">RubyTuts for beginners</span>  
+      </div><!-- /.inner -->    
+    </div><!-- /#header -->
+    <div id="navigation" class="row sixteen columns">
+      <div class="menu-header">
+        <ul id="menu-main-menu" class="menu">
+          <li><%= link_to "Home", welcome_index_path %></li>
+          <li><%= link_to "About", welcome_about_path %></li>
+      </ul>
+      </div> <!-- /.menu-header -->  
+    </div><!-- /#navigation -->     
+    
+    <div id="content" class="sixteen columns">
+      <%= yield %>
+    </div> <!-- /#content -->   
 
-    <ul>
-        <li><%= link_to "Home", welcome_index_path %></li>
-        <li><%= link_to "About", welcome_about_path %></li>
-    </ul>
+    <div class="clear"></div>
 
-    <%= yield %>
+    <div id="footer" class="normal sixteen columns">
+    </div> <!-- /#footer --> 
+      
 
+  </div><!-- /#wrap -->  
 </body>
 </html>
