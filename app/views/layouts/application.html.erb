@@ -1,40 +1,37 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>RubyTuts</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div id="wrap" class="container">
-    <div id="header" class="sixteen-columns">
-      <div class="inner">
-        <h1 id="site-title" class="text">
-          <%= link_to "RubyTuts", welcome_index_path %>
-        </h1>
-        <span class="site-desc text">RubyTuts for beginners</span>  
-      </div><!-- /.inner -->    
-    </div><!-- /#header -->
-    <div id="navigation" class="row sixteen columns">
-      <div class="menu-header">
-        <ul id="menu-main-menu" class="menu">
-          <li><%= link_to "Home", welcome_index_path %></li>
-          <li><%= link_to "About", welcome_about_path %></li>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "RubyTuts", welcome_index_path %></h1>
+        </li>
       </ul>
-      </div> <!-- /.menu-header -->  
-    </div><!-- /#navigation -->     
-    
-    <div id="content" class="sixteen columns">
-      <%= yield %>
-    </div> <!-- /#content -->   
 
-    <div class="clear"></div>
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><a href="#">My Wikis</a></li>
+          <li><a href="#">Tour</a></li>
+          <li><%= link_to "About", welcome_about_path %></li>
+          <li><a href="#">Sign Up</a></li>
+          <li><a href="#">Sign In</a></li>
+        </ul>
+      </section>
+    </nav>
 
-    <div id="footer" class="normal sixteen columns">
-    </div> <!-- /#footer --> 
-      
 
-  </div><!-- /#wrap -->  
-</body>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
