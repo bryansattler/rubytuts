@@ -1,5 +1,4 @@
 Rubytuts::Application.routes.draw do
-  devise_for :models
 
   get "welcome/index"
 
