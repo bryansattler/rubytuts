@@ -13,3 +13,5 @@ preview.png: preview-dbcc8d05444e840bfa008054d7f041e6.png
 preview/index.png: preview-dbcc8d05444e840bfa008054d7f041e6.png
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
+vendor/modernizr.js: vendor/modernizr-a7d5258f68c42509cd151b5d3ebb9aa9.js
+vendor/modernizr/index.js: vendor/modernizr-a7d5258f68c42509cd151b5d3ebb9aa9.js
