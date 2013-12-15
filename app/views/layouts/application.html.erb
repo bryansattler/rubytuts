@@ -30,6 +30,22 @@
       </section>
     </nav>
 
+      <% if flash[:notice] %>
+        <div class="alert-box success radius">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:error] %>
+        <div class="alert-box warning radius">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:error] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert-box">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
