@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+      <h2>Sign up</h2>
+
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div><%= f.label :email %><br />
+        <%= f.email_field :email, :autofocus => true %></div>
+
+        <div><%= f.label :password %><br />
+        <%= f.password_field :password %></div>
+
+        <div><%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation %></div>
+
+        <div><%= f.submit "Sign up", class: 'button small'  %></div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div> 
+  </div>
+</div>
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Copyright RubyTuts.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

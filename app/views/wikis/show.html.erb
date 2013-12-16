@@ -1,2 +1,32 @@
-<h1><%= @wiki.title %></h1>
-<p><%= @wiki.body %></p>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+      <h1><%= @wiki.title %></h1>
+      
+      <% if can? :edit, @wiki %>
+        <%= link_to "Edit", edit_wiki_path(@wiki), class: 'button tiny' %>
+      <% end %>
+
+      <p><%= @wiki.body %></p>
+    </div>
+  </div>
+</div>   
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Copyright RubyTuts.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

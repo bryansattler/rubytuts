@@ -1,4 +1,38 @@
-<h1>All Wikis</h1>
-<% @wikis.each do |wiki| %>
-  <p><%= link_to wiki.title, wiki %></p>
-<% end %>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="row">
+      <h1>All Wikis</h1>
+
+      <% if can? :create, Wiki %>
+      <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-primary btn-mini' %>
+      <% end %>
+      
+      <% @wikis.each do |wiki| %>
+        <h4><%= link_to wiki.title, wiki %></h4>
+      <small>
+        submitted <%= time_ago_in_words(wiki.created_at) %> ago by <%= wiki.user.name %><br/>
+        <%= wiki.comments.count %> Comments
+      </small>        
+      <% end %>
+    </div>
+  </div>
+</div>      
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Copyright RubyTuts.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
