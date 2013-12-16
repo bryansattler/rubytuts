@@ -3,7 +3,11 @@
     <div class="row">
       <h1>All Wikis</h1>
       <% @wikis.each do |wiki| %>
-        <p><%= link_to wiki.title, wiki %></p>
+        <h4><%= link_to wiki.title, wiki %></h4>
+      <small>
+        submitted <%= time_ago_in_words(wiki.created_at) %> ago by <%= wiki.user.name %><br/>
+        <%= wiki.comments.count %> Comments
+      </small>        
       <% end %>
     </div>
   </div>
