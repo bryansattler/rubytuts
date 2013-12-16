@@ -2,6 +2,11 @@
   <div class="large-12 columns">
     <div class="row">
       <h1>All Wikis</h1>
+
+      <% if can? :create, Wiki %>
+      <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-primary btn-mini' %>
+      <% end %>
+      
       <% @wikis.each do |wiki| %>
         <h4><%= link_to wiki.title, wiki %></h4>
       <small>
